@@ -65,7 +65,7 @@ function Footer() {
             Email: offficialtechfeil@gmail.com
 
           </Typography>
-          <Typography mb="30px">(234)9022879516</Typography>
+          <Typography mb="30px">(+234)9022879516</Typography> 
         </Box>
       </Box>
     </Box>
