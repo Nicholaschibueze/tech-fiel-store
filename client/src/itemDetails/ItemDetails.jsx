@@ -126,7 +126,7 @@ const ItemDetails = () => {
           <Tab label="REVIEWS" value="reviews" />
         </Tabs>
       </Box>
-      
+
       <Box display="flex" flexWrap="wrap" gap="15px">
         {value === "description" && (
           <div>{item?.attributes?.longDescription}</div>
