@@ -17,7 +17,15 @@ const Item = ({ item, width }) => {
   } = useTheme();
 
   const { category, price, name, image } = item.attributes;
-  const url = image?.data?.attributes?.formats?.medium?.url; // Use optional chaining to access the 'url' property safely
+  const {
+    data: {
+      attributes: {
+        formats: {
+          medium: { url },
+        },
+      },
+    },
+  } = image;
 
   return (
     <Box width={width}>
@@ -30,7 +38,7 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width="300px"
           height="400px"
-          src={url ? `http://localhost:1337${url}` : ""}
+          src={`http://localhost:1337${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
         />

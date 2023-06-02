@@ -1,51 +1,39 @@
-import {  useEffect }  from  'react';
-import{
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation
-   
-}
-from 'react-router-dom';
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Home from "./scenes/home/Home";
+import Navbar from "./scenes/global/Navbar";
+import Footer from "./scenes/global/Footer";
+import ItemDetails from "./scenes/itemDetails/ItemDetails";
+import CartMenu from "./scenes/global/CartMenu";
+import Checkout from "./scenes/checkout/Checkout";
+import Confirmation from "./scenes/checkout/Confirmation";
 
-import Home from './scenes/home/Home'
-import ItemDetails from './itemDetails/ItemDetails';
-import Checkout from './scenes/checkout/Checkout';
-import Confirmation from './scenes/checkout/confirmation';
-import Navbar from './scenes/global/Navbar';
-import CartMenu from './scenes/global/CartMenu';
-import Footer from './scenes/global/Footer';
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
-const ScrollToTop= ()=>{
-  const  {pathname} = useLocation();
-
-  useEffect(()=> {
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname])
+  }, [pathname]);
 
   return null;
-
-}
+};
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <Navbar />
-      <ScrollToTop/>
-      <Routes>
-        
-        <Route path='/' element= {<Home />} />
-        <Route path='item/:itemId' element= {<ItemDetails />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path='checkout/success' element= {<Confirmation />} />
-      </Routes>
-      <CartMenu/>
-      <Footer/>
-      
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="item/:itemId" element={<ItemDetails />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout/success" element={<Confirmation />} />
+        </Routes>
+        <CartMenu />
+        <Footer />
       </BrowserRouter>
-       
-    </div> 
+    </div>
   );
 }
 

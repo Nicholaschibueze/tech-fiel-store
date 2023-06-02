@@ -40,7 +40,7 @@ function Navbar() {
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
         >
-          Tech-Fiel Store
+          ECOMMER
         </Box>
         <Box
           display="flex"
@@ -85,4 +85,3 @@ function Navbar() {
 }
 
 export default Navbar;
- 
