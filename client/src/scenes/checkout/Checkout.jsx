@@ -8,6 +8,7 @@ import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
 
+
 const stripePromise = loadStripe(
   "pk_test_51NESlzG8WPB9z1CmsmOy9vjX1qdnwbMqfz1f9ABGSLRno9RyeX656yhdbw0MTRy5ou6O3Z0WnP4cxiwEbkRzNtYu00fe6bOEBd"
 );
@@ -22,6 +23,7 @@ const Checkout = () => {
     setActiveStep(activeStep + 1);
 
     // this copies the billing address onto shipping address
+
     if (isFirstStep && values.shippingAddress.isSameAddress) {
       actions.setFieldValue("shippingAddress", {
         ...values.billingAddress,
